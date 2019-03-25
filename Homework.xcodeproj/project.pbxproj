@@ -12,6 +12,9 @@
 		1E5CC8F522489D7C0077426A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F322489D7C0077426A /* Main.storyboard */; };
 		1E5CC8F722489D7E0077426A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F622489D7E0077426A /* Assets.xcassets */; };
 		1E5CC8FA22489D7E0077426A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F822489D7E0077426A /* LaunchScreen.storyboard */; };
+		596ED9192248A069005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
+		596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
+		596ED91D2248A0F4005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		1E5CC8F622489D7E0077426A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E5CC8F922489D7E0077426A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E5CC8FB22489D7E0077426A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		596ED9182248A069005717E2 /* Levi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levi.storyboard; sourceTree = "<group>"; };
+		596ED91A2248A082005717E2 /* LeviFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviFirstViewController.swift; sourceTree = "<group>"; };
+		596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				1E5CC8F622489D7E0077426A /* Assets.xcassets */,
 				1E5CC8F822489D7E0077426A /* LaunchScreen.storyboard */,
 				1E5CC8FB22489D7E0077426A /* Info.plist */,
+				596ED9182248A069005717E2 /* Levi.storyboard */,
+				596ED91A2248A082005717E2 /* LeviFirstViewController.swift */,
+				596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -124,6 +133,7 @@
 			files = (
 				1E5CC8FA22489D7E0077426A /* LaunchScreen.storyboard in Resources */,
 				1E5CC8F722489D7E0077426A /* Assets.xcassets in Resources */,
+				596ED9192248A069005717E2 /* Levi.storyboard in Resources */,
 				1E5CC8F522489D7C0077426A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				596ED91D2248A0F4005717E2 /* LeviSecondViewController.swift in Sources */,
+				596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */,
 				1E5CC8F222489D7C0077426A /* ViewController.swift in Sources */,
 				1E5CC8F022489D7C0077426A /* AppDelegate.swift in Sources */,
 			);
