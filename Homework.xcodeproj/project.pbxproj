@@ -15,6 +15,9 @@
 		596ED9192248A069005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
 		596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
 		596ED91D2248A0F4005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
+		1E5CC90222489EFB0077426A /* JillFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90122489EFB0077426A /* JillFirstViewController.swift */; };
+		1E5CC90422489F250077426A /* JillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90322489F250077426A /* JillSecondViewController.swift */; };
+		1E5CC90622489F4C0077426A /* JillStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC90522489F4C0077426A /* JillStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		596ED9182248A069005717E2 /* Levi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levi.storyboard; sourceTree = "<group>"; };
 		596ED91A2248A082005717E2 /* LeviFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviFirstViewController.swift; sourceTree = "<group>"; };
 		596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviSecondViewController.swift; sourceTree = "<group>"; };
+		1E5CC90122489EFB0077426A /* JillFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JillFirstViewController.swift; sourceTree = "<group>"; };
+		1E5CC90322489F250077426A /* JillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JillSecondViewController.swift; sourceTree = "<group>"; };
+		1E5CC90522489F4C0077426A /* JillStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JillStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,9 @@
 				596ED9182248A069005717E2 /* Levi.storyboard */,
 				596ED91A2248A082005717E2 /* LeviFirstViewController.swift */,
 				596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */,
+				1E5CC90122489EFB0077426A /* JillFirstViewController.swift */,
+				1E5CC90322489F250077426A /* JillSecondViewController.swift */,
+				1E5CC90522489F4C0077426A /* JillStoryboard.storyboard */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5CC90622489F4C0077426A /* JillStoryboard.storyboard in Resources */,
 				1E5CC8FA22489D7E0077426A /* LaunchScreen.storyboard in Resources */,
 				1E5CC8F722489D7E0077426A /* Assets.xcassets in Resources */,
 				596ED9192248A069005717E2 /* Levi.storyboard in Resources */,
@@ -149,6 +159,8 @@
 				596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */,
 				1E5CC8F222489D7C0077426A /* ViewController.swift in Sources */,
 				1E5CC8F022489D7C0077426A /* AppDelegate.swift in Sources */,
+				1E5CC90222489EFB0077426A /* JillFirstViewController.swift in Sources */,
+				1E5CC90422489F250077426A /* JillSecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
