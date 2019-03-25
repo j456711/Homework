@@ -16,9 +16,13 @@ class LeviSecondViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     var titleLevi: String?
     @objc dynamic var titleKVOLevi: String?
+    weak var delgate: DelgateSend?
+    var testClosure: ((String) -> Void)?
+    var sendClosure: (()-> String)?
+    
     @IBAction func action() {
-        titleKVOLevi = textField.text
-        
+//        titleKVOLevi = textField.text
+//
         
     }
     
@@ -26,12 +30,17 @@ class LeviSecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLabel.text = titleLevi
-        
+        if sendClosure != nil {
+            
+            self.titleLabel.text = sendClosure!()
+        }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.dismiss.rawValue {
+            
+            titleKVOLevi = textField.text
             
             guard let vc = segue.destination as? LeviFirstViewController else {return}
             guard let title = textField.text else {return}
@@ -39,15 +48,20 @@ class LeviSecondViewController: UIViewController {
             /////1
           //  vc.titleLabel.text = title
             
-            ////2
+            ////2 KVO
 //            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
 //            self.titleKVOLevi = title
 //            vc.removeObserver(self, forKeyPath: "titleKVOLevi")
             
-            ///3
-            NotificationCenter.default.post(name: NotificationStruct.first, object: title)
+            ///3 NotifiationCenter
+            //NotificationCenter.default.post(name: NotificationStruct.first, object: title)
             
-            //4
+            //4 Delgate
+           // self.delgate?.sendData(title: title)
+            
+            //5 Closure
+            testClosure?(title)
+            
         }
     }
     
@@ -66,10 +80,13 @@ class LeviSecondViewController: UIViewController {
         titleLevi = titleTwo
     
     }
+    
+    func closure(complethilder: @escaping (String) ->  Void) {
+        
+        self.testClosure = complethilder
+    }
 }
 
-//extension NotificationCenter {
-//
-//    static var titleLevi: String?
-//}
-
+protocol DelgateSend: class {
+    func sendData(title: String)
+}

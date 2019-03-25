@@ -27,9 +27,7 @@ class LeviFirstViewController: UIViewController {
     var titleLevi: String?
     @objc dynamic var titleKVOLevi: String?
     var closure: (() -> Void)? = nil
-//    let first = Notification.Name(rawValue: "first")
-//    let second = Notification.Name(rawValue: "second")
-    
+
     
     @IBAction func action() {
         
@@ -44,7 +42,7 @@ class LeviFirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //3
+        //3 NotifiationCenter
         NotificationCenter.default.addObserver(self, selector: #selector(getTitle(notifciation:)), name: NotificationStruct.first, object: nil)
         
     }
@@ -66,26 +64,41 @@ class LeviFirstViewController: UIViewController {
             guard let vc = segue.destination as? LeviSecondViewController else {return}
             guard let title = textField.text else {return}
             
-            /////1
+            //1 Property
             //vc.titleLevi = title
             
             
-            //2
+            //2 KVO
 //            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
 //            titleKVOLevi = title
 
             
-            //3
-            NotificationCenter.default.addObserver(vc, selector: #selector(vc.getTitleSecond(notifciation:)), name: NotificationStruct.second, object: nil)
-            NotificationCenter.default.post(name: NotificationStruct.second, object: title)
+            //3 NotifiationCenter
+//            NotificationCenter.default.addObserver(vc, selector: #selector(vc.getTitleSecond(notifciation:)), name: NotificationStruct.second, object: nil)
+//            NotificationCenter.default.post(name: NotificationStruct.second, object: title)
             
-            //4
+            //4 delgate
+            vc.delgate = self
+            
+            
+            //5 closure
+            vc.testClosure = {[weak self] text in
+                self?.titleLevi = text }
+            vc.sendClosure = { [weak self] in
+                return self?.textField.text ?? ""
+            }
+//            vc.closure(complethilder: { text in
+//                self.titleLevi = text
+//
+//            })
             
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        
         self.titleLabel.text = self.titleLevi
     }
     
@@ -100,3 +113,11 @@ class LeviFirstViewController: UIViewController {
 }
 
 
+extension LeviFirstViewController: DelgateSend {
+    
+    func sendData(title: String) {
+
+        self.titleLevi = title
+    }
+    
+}
