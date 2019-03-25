@@ -12,12 +12,23 @@
 		1E5CC8F522489D7C0077426A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F322489D7C0077426A /* Main.storyboard */; };
 		1E5CC8F722489D7E0077426A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F622489D7E0077426A /* Assets.xcassets */; };
 		1E5CC8FA22489D7E0077426A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F822489D7E0077426A /* LaunchScreen.storyboard */; };
-		596ED9192248A069005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
-		596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
-		596ED91D2248A0F4005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
 		1E5CC90222489EFB0077426A /* JillFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90122489EFB0077426A /* JillFirstViewController.swift */; };
 		1E5CC90422489F250077426A /* JillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90322489F250077426A /* JillSecondViewController.swift */; };
 		1E5CC90622489F4C0077426A /* JillStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC90522489F4C0077426A /* JillStoryboard.storyboard */; };
+		596ED9192248A069005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
+		596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
+		596ED91D2248A0F4005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
+		596ED9202248B378005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
+		596ED9212248B378005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
+		596ED9222248B378005717E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F122489D7C0077426A /* ViewController.swift */; };
+		596ED9232248B378005717E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC8EF22489D7C0077426A /* AppDelegate.swift */; };
+		596ED9242248B378005717E2 /* JillFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90122489EFB0077426A /* JillFirstViewController.swift */; };
+		596ED9252248B378005717E2 /* JillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90322489F250077426A /* JillSecondViewController.swift */; };
+		596ED9282248B378005717E2 /* JillStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC90522489F4C0077426A /* JillStoryboard.storyboard */; };
+		596ED9292248B378005717E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F822489D7E0077426A /* LaunchScreen.storyboard */; };
+		596ED92A2248B378005717E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F622489D7E0077426A /* Assets.xcassets */; };
+		596ED92B2248B378005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
+		596ED92C2248B378005717E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F322489D7C0077426A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,16 +39,25 @@
 		1E5CC8F622489D7E0077426A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E5CC8F922489D7E0077426A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E5CC8FB22489D7E0077426A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		596ED9182248A069005717E2 /* Levi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levi.storyboard; sourceTree = "<group>"; };
-		596ED91A2248A082005717E2 /* LeviFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviFirstViewController.swift; sourceTree = "<group>"; };
-		596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviSecondViewController.swift; sourceTree = "<group>"; };
 		1E5CC90122489EFB0077426A /* JillFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JillFirstViewController.swift; sourceTree = "<group>"; };
 		1E5CC90322489F250077426A /* JillSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JillSecondViewController.swift; sourceTree = "<group>"; };
 		1E5CC90522489F4C0077426A /* JillStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JillStoryboard.storyboard; sourceTree = "<group>"; };
+		596ED9182248A069005717E2 /* Levi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levi.storyboard; sourceTree = "<group>"; };
+		596ED91A2248A082005717E2 /* LeviFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviFirstViewController.swift; sourceTree = "<group>"; };
+		596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviSecondViewController.swift; sourceTree = "<group>"; };
+		596ED9302248B378005717E2 /* Homework copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homework copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		596ED9312248B378005717E2 /* Homework copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Homework copy-Info.plist"; path = "/Users/chiangchihhsuan/Desktop/March25/Homework copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1E5CC8E922489D7C0077426A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596ED9262248B378005717E2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +72,7 @@
 			children = (
 				1E5CC8EE22489D7C0077426A /* Homework */,
 				1E5CC8ED22489D7C0077426A /* Products */,
+				596ED9312248B378005717E2 /* Homework copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				1E5CC8EC22489D7C0077426A /* Homework.app */,
+				596ED9302248B378005717E2 /* Homework copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +124,23 @@
 			productReference = 1E5CC8EC22489D7C0077426A /* Homework.app */;
 			productType = "com.apple.product-type.application";
 		};
+		596ED91E2248B378005717E2 /* Homework copy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 596ED92D2248B378005717E2 /* Build configuration list for PBXNativeTarget "Homework copy" */;
+			buildPhases = (
+				596ED91F2248B378005717E2 /* Sources */,
+				596ED9262248B378005717E2 /* Frameworks */,
+				596ED9272248B378005717E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Homework copy";
+			productName = Homework;
+			productReference = 596ED9302248B378005717E2 /* Homework copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -131,6 +170,7 @@
 			projectRoot = "";
 			targets = (
 				1E5CC8EB22489D7C0077426A /* Homework */,
+				596ED91E2248B378005717E2 /* Homework copy */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +188,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		596ED9272248B378005717E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596ED9282248B378005717E2 /* JillStoryboard.storyboard in Resources */,
+				596ED9292248B378005717E2 /* LaunchScreen.storyboard in Resources */,
+				596ED92A2248B378005717E2 /* Assets.xcassets in Resources */,
+				596ED92B2248B378005717E2 /* Levi.storyboard in Resources */,
+				596ED92C2248B378005717E2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -161,6 +213,19 @@
 				1E5CC8F022489D7C0077426A /* AppDelegate.swift in Sources */,
 				1E5CC90222489EFB0077426A /* JillFirstViewController.swift in Sources */,
 				1E5CC90422489F250077426A /* JillSecondViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		596ED91F2248B378005717E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				596ED9202248B378005717E2 /* LeviSecondViewController.swift in Sources */,
+				596ED9212248B378005717E2 /* LeviFirstViewController.swift in Sources */,
+				596ED9222248B378005717E2 /* ViewController.swift in Sources */,
+				596ED9232248B378005717E2 /* AppDelegate.swift in Sources */,
+				596ED9242248B378005717E2 /* JillFirstViewController.swift in Sources */,
+				596ED9252248B378005717E2 /* JillSecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +403,42 @@
 			};
 			name = Release;
 		};
+		596ED92E2248B378005717E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TS57F7BKT5;
+				INFOPLIST_FILE = "Homework copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JillYeh.Homework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		596ED92F2248B378005717E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TS57F7BKT5;
+				INFOPLIST_FILE = "Homework copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.JillYeh.Homework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -355,6 +456,15 @@
 			buildConfigurations = (
 				1E5CC8FF22489D7E0077426A /* Debug */,
 				1E5CC90022489D7E0077426A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		596ED92D2248B378005717E2 /* Build configuration list for PBXNativeTarget "Homework copy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				596ED92E2248B378005717E2 /* Debug */,
+				596ED92F2248B378005717E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

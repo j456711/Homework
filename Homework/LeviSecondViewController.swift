@@ -11,8 +11,49 @@ import UIKit
 
 class LeviSecondViewController: UIViewController {
     
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var titleLabel: UILabel!
+    var titleLevi: String?
+    @objc dynamic var titleKVOLevi: String?
+    @IBAction func action() {
+        titleKVOLevi = textField.text
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.titleLabel.text = titleLevi
         
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.dismiss.rawValue {
+            
+            guard let vc = segue.destination as? LeviFirstViewController else {return}
+            guard let title = textField.text else {return}
+            
+            /////1
+          //  vc.titleLabel.text = title
+            
+            ////2
+            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
+            self.titleKVOLevi = title
+            vc.removeObserver(self, forKeyPath: "titleKVOLevi")
+            
+            
+            
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "titleKVOLevi" {
+          
+            guard let title = change?[NSKeyValueChangeKey.newKey] as? String else {return}
+            self.titleLevi = title
+        }
     }
 }
