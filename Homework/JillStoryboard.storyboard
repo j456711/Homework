@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uym-Gd-kUS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,12 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="g6A-hQ-lww">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huC-v9-XMb">
+                                <rect key="frame" x="68" y="186" width="239" height="22"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWZ-5e-NY0">
+                                <rect key="frame" x="164.5" y="412" width="46" height="30"/>
+                                <state key="normal" title="下一頁"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一頁的文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-55-Lpd">
+                                <rect key="frame" x="135.5" y="323" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="53A-55-Lpd" firstAttribute="centerY" secondItem="g6A-hQ-lww" secondAttribute="centerY" id="4F4-cz-3Y1"/>
+                            <constraint firstItem="Ogr-3N-18f" firstAttribute="trailing" secondItem="huC-v9-XMb" secondAttribute="trailing" constant="68" id="EG3-wp-92S"/>
+                            <constraint firstItem="53A-55-Lpd" firstAttribute="centerX" secondItem="g6A-hQ-lww" secondAttribute="centerX" id="clh-qW-dDw"/>
+                            <constraint firstItem="huC-v9-XMb" firstAttribute="leading" secondItem="Ogr-3N-18f" secondAttribute="leading" constant="68" id="dpY-Bf-4zz"/>
+                            <constraint firstItem="53A-55-Lpd" firstAttribute="top" secondItem="huC-v9-XMb" secondAttribute="bottom" constant="115" id="fUp-8J-ouI"/>
+                            <constraint firstItem="oWZ-5e-NY0" firstAttribute="top" secondItem="53A-55-Lpd" secondAttribute="bottom" constant="68" id="ozu-Oy-GXB"/>
+                            <constraint firstItem="huC-v9-XMb" firstAttribute="centerX" secondItem="g6A-hQ-lww" secondAttribute="centerX" id="qAN-vV-BqA"/>
+                            <constraint firstItem="oWZ-5e-NY0" firstAttribute="centerX" secondItem="g6A-hQ-lww" secondAttribute="centerX" id="rs4-tt-BQD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ogr-3N-18f"/>
                     </view>
                     <navigationItem key="navigationItem" id="egs-2N-7xP"/>
                     <connections>
-                        <segue destination="vsy-hk-lOT" kind="show" id="rAj-UY-pg1"/>
+                        <segue destination="vsy-hk-lOT" kind="show" identifier="SegueNextPage" id="rAj-UY-pg1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XbX-K6-n4Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -36,7 +64,35 @@
                     <view key="view" contentMode="scaleToFill" id="YTt-3O-4pN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7uG-dR-iH9">
+                                <rect key="frame" x="68" y="186" width="239" height="22"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上一頁的文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o53-CG-M7u">
+                                <rect key="frame" x="135.5" y="323" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-mv-O1f">
+                                <rect key="frame" x="164.5" y="412" width="46" height="30"/>
+                                <state key="normal" title="上一頁"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o53-CG-M7u" firstAttribute="centerX" secondItem="YTt-3O-4pN" secondAttribute="centerX" id="8Lt-hN-X2o"/>
+                            <constraint firstItem="7uG-dR-iH9" firstAttribute="top" secondItem="JdQ-nK-uHr" secondAttribute="top" constant="122" id="Jn0-lV-ehT"/>
+                            <constraint firstItem="gdD-mv-O1f" firstAttribute="centerX" secondItem="YTt-3O-4pN" secondAttribute="centerX" id="Rij-OE-kvX"/>
+                            <constraint firstItem="JdQ-nK-uHr" firstAttribute="trailing" secondItem="7uG-dR-iH9" secondAttribute="trailing" constant="68" id="i2l-IE-loz"/>
+                            <constraint firstItem="7uG-dR-iH9" firstAttribute="leading" secondItem="JdQ-nK-uHr" secondAttribute="leading" constant="68" id="ju7-mG-eOX"/>
+                            <constraint firstItem="gdD-mv-O1f" firstAttribute="top" secondItem="o53-CG-M7u" secondAttribute="bottom" constant="68" id="mbG-jK-1f7"/>
+                            <constraint firstItem="o53-CG-M7u" firstAttribute="centerY" secondItem="YTt-3O-4pN" secondAttribute="centerY" id="pNS-sX-ERh"/>
+                            <constraint firstItem="o53-CG-M7u" firstAttribute="top" secondItem="7uG-dR-iH9" secondAttribute="bottom" constant="115" id="zwc-Vm-Odd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JdQ-nK-uHr"/>
                     </view>
                 </viewController>
