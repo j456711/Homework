@@ -45,17 +45,60 @@ import UIKit
 
 // --------------- Push: Delegate START ---------------
 
+//class JillFirstViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func nextPageButtonPressed(_ sender: Any) {
+//
+//        performSegue(withIdentifier: "SegueNextPage", sender: nil)
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "SegueNextPage" {
+//
+//            if let destination = segue.destination as? JillSecondViewController {
+//
+//                destination.firstPageText = textField.text
+//
+//                destination.delegate = self
+//            }
+//        }
+//    }
+//}
+//
+//extension JillFirstViewController: TextDelegate {
+//
+//    func passData(_ viewController: JillSecondViewController) {
+//
+//        self.label.text = viewController.textfield.text
+//    }
+//}
+
+// --------------- Push: Delegate END ---------------
+
+
+// --------------- Push: Closure START ---------------
+
 class JillFirstViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var label: UILabel!
     
-    @IBAction func nextPageButtonPressed(_ sender: Any) {
+    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
         
         performSegue(withIdentifier: "SegueNextPage", sender: nil)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,18 +112,14 @@ class JillFirstViewController: UIViewController {
                 
                 destination.firstPageText = textField.text
                 
-                destination.delegate = self
+                destination.dataHandler = {
+                    
+                    self.label.text = destination.textField.text
+                }
             }
         }
     }
+   
 }
 
-extension JillFirstViewController: TextDelegate {
-    
-    func passData(_ viewController: JillSecondViewController) {
-                
-        self.label.text = viewController.textfield.text
-    }
-}
-
-// --------------- Push: Delegate END ---------------
+// --------------- Push: Closure START ---------------

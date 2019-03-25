@@ -105,7 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="o53-CG-M7u" id="hW7-Hw-ZGJ"/>
-                        <outlet property="textfield" destination="7uG-dR-iH9" id="i1l-Vb-5p9"/>
+                        <outlet property="textField" destination="7uG-dR-iH9" id="jGt-7g-jQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-dr-7XK" userLabel="First Responder" sceneMemberID="firstResponder"/>

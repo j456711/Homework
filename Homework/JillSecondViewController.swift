@@ -44,27 +44,60 @@ import UIKit
 
 // --------------- Push: Delegate START ---------------
 
-protocol TextDelegate: AnyObject {
-    
-    func passData(_ viewController: JillSecondViewController)
-}
+//protocol TextDelegate: AnyObject {
+//
+//    func passData(_ viewController: JillSecondViewController)
+//}
+//
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textfield: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//
+//        self.delegate?.passData(self)
+//
+//        self.navigationController?.popViewController(animated: true)
+//    }
+//
+//    var firstPageText: String?
+//
+//    weak var delegate: TextDelegate?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        label.text = firstPageText
+//    }
+//}
+
+// --------------- Push: Delegate END ---------------
+
+
+// --------------- Push: Closure START ---------------
 
 class JillSecondViewController: UIViewController {
     
-    @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var label: UILabel!
     
     @IBAction func lastPageButtonPressed(_ sender: UIButton) {
         
-        self.delegate?.passData(self)
+        dataHandler?()
         
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     var firstPageText: String?
     
-    weak var delegate: TextDelegate?
+    var dataHandler: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +108,7 @@ class JillSecondViewController: UIViewController {
         
         label.text = firstPageText
     }
+    
 }
 
-// --------------- Push: Delegate END ---------------
+// --------------- Push: Closure END ---------------
