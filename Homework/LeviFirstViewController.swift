@@ -14,7 +14,10 @@ enum Segue: String {
     case dismiss
 }
 
-
+struct NotificationStruct {
+    static let first = Notification.Name(rawValue: "first")
+    static let second = Notification.Name(rawValue: "second")
+}
 
 class LeviFirstViewController: UIViewController {
     
@@ -24,6 +27,8 @@ class LeviFirstViewController: UIViewController {
     var titleLevi: String?
     @objc dynamic var titleKVOLevi: String?
     var closure: (() -> Void)? = nil
+//    let first = Notification.Name(rawValue: "first")
+//    let second = Notification.Name(rawValue: "second")
     
     
     @IBAction func action() {
@@ -39,18 +44,8 @@ class LeviFirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        titleKVO.addObserver(self, forKeyPath: "title", options: [.new], context: nil)
-
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(getTitle(notifciation:)), name: NSNotification.Name(rawValue: Segue.push.rawValue), object: nil)
-        
-//        observe(\LeviFirstViewController.titleKVO.title, options: [.new]) { vc, change in
-//
-//            guard let title = change.newValue else {return}
-//            vc.titleLabel.text = title
-//
-//        }
+        //3
+        NotificationCenter.default.addObserver(self, selector: #selector(getTitle(notifciation:)), name: NotificationStruct.first, object: nil)
         
     }
     
@@ -76,13 +71,19 @@ class LeviFirstViewController: UIViewController {
             
             
             //2
-            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
-            titleKVOLevi = title
+//            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
+//            titleKVOLevi = title
 
             
             //3
+            NotificationCenter.default.addObserver(vc, selector: #selector(vc.getTitleSecond(notifciation:)), name: NotificationStruct.second, object: nil)
+            NotificationCenter.default.post(name: NotificationStruct.second, object: title)
+            
+            //4
+            
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.titleLabel.text = self.titleLevi
@@ -90,8 +91,11 @@ class LeviFirstViewController: UIViewController {
     
     
     @objc func getTitle(notifciation: NSNotification) {
-        
-        
+//        guard let title = notifciation.userInfo?[AnyHashable("Levi")] as? String else {return}
+//        titleLevi = title
+        guard let titleTwo = notifciation.object as? String else {return}
+        titleLevi = titleTwo
+      
     }
 }
 

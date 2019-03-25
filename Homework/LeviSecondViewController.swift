@@ -40,12 +40,14 @@ class LeviSecondViewController: UIViewController {
           //  vc.titleLabel.text = title
             
             ////2
-            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
-            self.titleKVOLevi = title
-            vc.removeObserver(self, forKeyPath: "titleKVOLevi")
+//            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
+//            self.titleKVOLevi = title
+//            vc.removeObserver(self, forKeyPath: "titleKVOLevi")
             
+            ///3
+            NotificationCenter.default.post(name: NotificationStruct.first, object: title)
             
-            
+            //4
         }
     }
     
@@ -56,4 +58,18 @@ class LeviSecondViewController: UIViewController {
             self.titleLevi = title
         }
     }
+    
+    
+    @objc func getTitleSecond(notifciation: NSNotification) {
+        
+        guard let titleTwo = notifciation.object as? String else {return}
+        titleLevi = titleTwo
+    
+    }
 }
+
+//extension NotificationCenter {
+//
+//    static var titleLevi: String?
+//}
+
