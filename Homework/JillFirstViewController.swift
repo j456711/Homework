@@ -16,18 +16,24 @@ class JillFirstViewController: UIViewController {
     
     @IBAction func nextPageButtonPressed(_ sender: UIButton) {
     
+        // Push: Property
         performSegue(withIdentifier: "SegueNextPage", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "SegueNextPage" {
+            
+            if let destination = segue.destination as? JillSecondViewController {
+                
+                destination.firstPageText = textField.text
+            }
+        }
     }
 
 }

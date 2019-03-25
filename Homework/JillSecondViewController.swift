@@ -15,18 +15,25 @@ class JillSecondViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+        
+        // push: Property
+        guard let firstVC = self.navigationController?.viewControllers.first as? JillFirstViewController else { return }
+
+        firstVC.label.text = self.textField.text
+        
+        self.navigationController?.popViewController(animated: true)
     }
+    
+    var firstPageText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        
+        label.text = firstPageText
     }
-
 
 }

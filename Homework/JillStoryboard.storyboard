@@ -13,7 +13,7 @@
         <!--Jill First View Controller-->
         <scene sceneID="xix-Pw-AuI">
             <objects>
-                <viewController id="GD7-jO-H1n" customClass="JillFirstViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JillFirstViewController" id="GD7-jO-H1n" customClass="JillFirstViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6A-hQ-lww">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--Jill Second View Controller-->
         <scene sceneID="kDM-ko-d9N">
             <objects>
-                <viewController id="vsy-hk-lOT" customClass="JillSecondViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JillSecondViewController" id="vsy-hk-lOT" customClass="JillSecondViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YTt-3O-4pN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
