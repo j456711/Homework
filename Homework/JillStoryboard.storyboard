@@ -28,7 +28,7 @@
                                 <rect key="frame" x="164.5" y="412" width="46" height="30"/>
                                 <state key="normal" title="下一頁"/>
                                 <connections>
-                                    <action selector="nextPageButtonPressed:" destination="GD7-jO-H1n" eventType="touchUpInside" id="70o-2l-AJT"/>
+                                    <action selector="nextPageButtonPressed:" destination="GD7-jO-H1n" eventType="touchUpInside" id="9qh-j6-352"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一頁的文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-55-Lpd">
@@ -53,8 +53,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="egs-2N-7xP"/>
                     <connections>
-                        <outlet property="label" destination="53A-55-Lpd" id="i6l-yt-DPx"/>
-                        <outlet property="textField" destination="huC-v9-XMb" id="5eY-1h-Owc"/>
+                        <outlet property="label" destination="53A-55-Lpd" id="5tV-PO-GbO"/>
+                        <outlet property="textField" destination="huC-v9-XMb" id="T1t-OP-Odx"/>
                         <segue destination="vsy-hk-lOT" kind="show" identifier="SegueNextPage" id="rAj-UY-pg1"/>
                     </connections>
                 </viewController>
@@ -86,7 +86,7 @@
                                 <rect key="frame" x="164.5" y="412" width="46" height="30"/>
                                 <state key="normal" title="上一頁"/>
                                 <connections>
-                                    <action selector="lastPageButtonPressed:" destination="vsy-hk-lOT" eventType="touchUpInside" id="T6r-Mt-CXw"/>
+                                    <action selector="lastPageButtonPressed:" destination="vsy-hk-lOT" eventType="touchUpInside" id="gbU-W2-rOR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,8 +104,8 @@
                         <viewLayoutGuide key="safeArea" id="JdQ-nK-uHr"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="o53-CG-M7u" id="cxT-Sl-R0V"/>
-                        <outlet property="textField" destination="7uG-dR-iH9" id="dYN-l5-Por"/>
+                        <outlet property="label" destination="o53-CG-M7u" id="hW7-Hw-ZGJ"/>
+                        <outlet property="textfield" destination="7uG-dR-iH9" id="i1l-Vb-5p9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-dr-7XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
