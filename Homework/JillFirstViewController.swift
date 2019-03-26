@@ -78,7 +78,7 @@ import UIKit
 //
 //    func passData(_ viewController: JillSecondViewController) {
 //
-//        self.label.text = viewController.textfield.text
+//        self.label.text = viewController.textField.text
 //    }
 //}
 
@@ -111,9 +111,9 @@ import UIKit
 //
 //                destination.firstPageText = textField.text
 //
-//                destination.dataHandler = {
+//                destination.dataHandler = { text in
 //
-//                    self.label.text = destination.textField.text
+//                    self.label.text = text
 //                }
 //            }
 //        }
@@ -240,14 +240,33 @@ class JillFirstViewController: UIViewController {
         guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
 
         secondVC.firstPageText = textField.text!
-        
+
         self.present(secondVC, animated: true, completion: nil)
     }
-    
+
     var secondPageText: String?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 }
+
+// --------------- Present: Property END ---------------
+
+
+// --------------- Retain Cycle START ---------------
+
+//class JillFirstViewController: UIViewController {
+//
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
+//
+//    deinit {
+//
+//        print("JillFirst is killed.")
+//    }
+//}
