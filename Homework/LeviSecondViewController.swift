@@ -19,7 +19,9 @@ class LeviSecondViewController: UIViewController {
     weak var delgate: DelgateSend?
     var testClosure: ((String) -> Void)?
     var sendClosure: (()-> String)?
-   
+    var observer: NSKeyValueObservation!
+    
+    
     @IBAction func action() {
         
         

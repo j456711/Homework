@@ -109,12 +109,6 @@ class LeviFirstViewController: UIViewController {
                 self?.titleLevi = title
                 
             })
-            
-//            vc.observer = self.observe(\.titleKVOLevi, options: [.new]){ [weak self] (object, change) in
-//
-//                print(object)
-//                print(change)
-//            }
             titleKVOLevi = title
             //vc.addObserver(self, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
             
