@@ -34,18 +34,26 @@
                                 <rect key="frame" x="164.5" y="365" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="action" destination="9fe-tp-0aI" eventType="touchUpInside" id="Lh1-ko-6Xt"/>
                                     <segue destination="NcW-ZB-ulD" kind="show" identifier="push" id="Brm-WO-B4E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdT-7V-5eS">
+                                <rect key="frame" x="161" y="435" width="53" height="30"/>
+                                <state key="normal" title="present"/>
+                                <connections>
+                                    <action selector="action" destination="9fe-tp-0aI" eventType="touchUpInside" id="cEh-8G-F8G"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jfm-Jh-EwY" firstAttribute="centerX" secondItem="1tl-LW-YkS" secondAttribute="centerX" id="IcZ-aG-M8O"/>
+                            <constraint firstItem="NdT-7V-5eS" firstAttribute="centerX" secondItem="fQv-DE-HZM" secondAttribute="centerX" id="MQ7-Oj-NN6"/>
                             <constraint firstItem="jfm-Jh-EwY" firstAttribute="top" secondItem="Oc9-gt-vzU" secondAttribute="bottom" constant="100" id="Uq6-AI-6zO"/>
                             <constraint firstItem="Oc9-gt-vzU" firstAttribute="top" secondItem="pH8-Ks-uyM" secondAttribute="top" constant="100" id="ZYV-hW-GmT"/>
                             <constraint firstItem="Oc9-gt-vzU" firstAttribute="leading" secondItem="pH8-Ks-uyM" secondAttribute="leading" constant="30" id="eOa-ge-ytA"/>
                             <constraint firstItem="fQv-DE-HZM" firstAttribute="top" secondItem="jfm-Jh-EwY" secondAttribute="bottom" constant="50" id="kha-YM-cYr"/>
+                            <constraint firstItem="NdT-7V-5eS" firstAttribute="top" secondItem="fQv-DE-HZM" secondAttribute="bottom" constant="40" id="lar-lj-ySn"/>
                             <constraint firstItem="pH8-Ks-uyM" firstAttribute="trailing" secondItem="Oc9-gt-vzU" secondAttribute="trailing" constant="30" id="uxg-Gr-8pj"/>
                             <constraint firstItem="fQv-DE-HZM" firstAttribute="centerX" secondItem="1tl-LW-YkS" secondAttribute="centerX" id="xuc-7E-Kfc"/>
                         </constraints>
@@ -66,7 +74,7 @@
         <!--Levi Second View Controller-->
         <scene sceneID="x7V-MT-ZlQ">
             <objects>
-                <viewController id="NcW-ZB-ulD" customClass="LeviSecondViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeviSecondViewController" id="NcW-ZB-ulD" customClass="LeviSecondViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Hn-eJ-B8F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,8 +95,14 @@
                                 <rect key="frame" x="164.5" y="365" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="action" destination="NcW-ZB-ulD" eventType="touchUpInside" id="2aP-VD-Xhk"/>
                                     <segue destination="5mh-41-0HB" kind="unwind" identifier="dismiss" unwindAction="unwindSegueLeviWithSegue:" id="HF5-nB-hqr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu6-Od-Gdc">
+                                <rect key="frame" x="161.5" y="435" width="52" height="30"/>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <action selector="action" destination="NcW-ZB-ulD" eventType="touchUpInside" id="UWd-t4-Kjh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,6 +112,8 @@
                             <constraint firstItem="44y-61-UWG" firstAttribute="centerX" secondItem="7Hn-eJ-B8F" secondAttribute="centerX" id="QLZ-ID-qhL"/>
                             <constraint firstItem="JJN-jk-Au7" firstAttribute="centerX" secondItem="7Hn-eJ-B8F" secondAttribute="centerX" id="T4j-Am-0sA"/>
                             <constraint firstItem="44y-61-UWG" firstAttribute="top" secondItem="wxW-b3-pEx" secondAttribute="bottom" constant="100" id="afO-Gx-Hqs"/>
+                            <constraint firstItem="eu6-Od-Gdc" firstAttribute="top" secondItem="JJN-jk-Au7" secondAttribute="bottom" constant="40" id="d0a-s3-Pjh"/>
+                            <constraint firstItem="eu6-Od-Gdc" firstAttribute="centerX" secondItem="JJN-jk-Au7" secondAttribute="centerX" id="dX3-qL-0dO"/>
                             <constraint firstItem="Xof-Qo-gJM" firstAttribute="trailing" secondItem="wxW-b3-pEx" secondAttribute="trailing" constant="30" id="hZV-un-w2z"/>
                             <constraint firstItem="JJN-jk-Au7" firstAttribute="top" secondItem="44y-61-UWG" secondAttribute="bottom" constant="50" id="waj-Aw-q25"/>
                             <constraint firstItem="wxW-b3-pEx" firstAttribute="leading" secondItem="Xof-Qo-gJM" secondAttribute="leading" constant="30" id="xty-iy-w62"/>
