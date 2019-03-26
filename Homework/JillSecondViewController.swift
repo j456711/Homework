@@ -117,6 +117,46 @@ import UIKit
 
 // --------------- Push: NotificationCenter START ---------------
 
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//
+//        NotificationCenter.default.post(name: .lastPageText, object: nil, userInfo: ["lastPageText" : textField.text!])
+//
+//        self.navigationController?.popViewController(animated: true)
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        label.text = firstPageText
+//    }
+//
+//    var firstPageText: String?
+//
+//    @objc func updateLabelText(_ notification: Notification) {
+//
+//        if let dict = notification.userInfo {
+//
+//            firstPageText = dict["nextPageText"] as? String
+//        }
+//    }
+//
+//}
+
+// --------------- Push: NotificationCenter END ---------------
+
+
+// --------------- Push: KVO START ---------------
+
 class JillSecondViewController: UIViewController {
 
     @IBOutlet weak var textField: UITextField!
@@ -125,66 +165,26 @@ class JillSecondViewController: UIViewController {
 
     @IBAction func lastPageButtonPressed(_ sender: UIButton) {
 
-        NotificationCenter.default.post(name: .lastPageText, object: nil, userInfo: ["lastPageText" : textField.text!])
-
+        if let firstVC = self.navigationController?.viewControllers.first as? JillFirstViewController {
+            
+            firstVC.displayedText.secondPageText = textField.text!
+        }
+        
         self.navigationController?.popViewController(animated: true)
     }
-
+    
+    @objc let displayedText = DisplayedText()
+    
+    var secondPageObserver: NSKeyValueObservation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        label.text = firstPageText
-    }
-    
-    var firstPageText: String?
-    
-    @objc func updateLabelText(_ notification: Notification) {
-        
-        if let dict = notification.userInfo {
-            
-            firstPageText = dict["nextPageText"] as? String
-        }
-    }
 
+        secondPageObserver = observe(\.displayedText.firstPageText, options: [.new], changeHandler: { (object, change) in
+
+            guard let updatedValue = change.newValue else { return }
+          
+            self.label.text = updatedValue
+        })
+    }
 }
-
-// --------------- Push: NotificationCenter END ---------------
-
-
-// --------------- Push: KVO START ---------------
-
-//class JillSecondViewController: UIViewController {
-//
-//    @IBOutlet weak var textField: UITextField!
-//
-//    @IBOutlet weak var label: UILabel!
-//
-//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
-//        
-//        displayedText.firstPageText = textField.text!
-//        
-//        self.navigationController?.popViewController(animated: true)
-//    }
-//
-//    @objc let displayedText = DisplayedText()
-//
-//    var firstPageObserver: NSKeyValueObservation?
-//
-//    var firstPageText: String?
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        firstPageObserver = displayedText.observe(\.firstPageText, options: [.new], changeHandler: { (strongSelf, change) in
-//
-//            guard let updatedText = change.newValue else { return }
-//            
-//            self.label.text = updatedText
-//            
-//        })
-//    }
-//}

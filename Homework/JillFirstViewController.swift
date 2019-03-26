@@ -128,9 +128,61 @@ import UIKit
 
 // --------------- Push: NotificationCenter START ---------------
 
-extension Notification.Name {
-    static let nextPageText = Notification.Name("nextPageText")
-    static let lastPageText = Notification.Name("lastPageText")
+//extension Notification.Name {
+//    static let nextPageText = Notification.Name("nextPageText")
+//    static let lastPageText = Notification.Name("lastPageText")
+//}
+//
+//class JillFirstViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
+//
+//        performSegue(withIdentifier: "SegueNextPage", sender: nil)
+//
+//        NotificationCenter.default.post(name: .nextPageText, object: nil, userInfo: ["nextPageText" : textField.text!])
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(updateLabelText(_:)), name: .lastPageText, object: nil)
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "SegueNextPage" {
+//
+//            if let destination = segue.destination as? JillSecondViewController {
+//
+//                NotificationCenter.default.addObserver(destination, selector: #selector(destination.updateLabelText(_:)), name: .nextPageText, object: nil)
+//            }
+//        }
+//    }
+//
+//    @objc func updateLabelText(_ notification: Notification) {
+//
+//        if let dict = notification.userInfo {
+//
+//            label.text = dict["lastPageText"] as? String
+//        }
+//    }
+//
+//}
+
+// --------------- Push: NotificationCenter END ---------------
+
+
+// --------------- Push: KVO START ---------------
+
+class DisplayedText: NSObject {
+    
+    @objc dynamic var firstPageText = ""
+
+    @objc dynamic var secondPageText = ""
 }
 
 class JillFirstViewController: UIViewController {
@@ -142,75 +194,34 @@ class JillFirstViewController: UIViewController {
     @IBAction func nextPageButtonPressed(_ sender: UIButton) {
         
         performSegue(withIdentifier: "SegueNextPage", sender: nil)
-        
-        NotificationCenter.default.post(name: .nextPageText, object: nil, userInfo: ["nextPageText" : textField.text!])
     }
+    
+    @objc let displayedText = DisplayedText()
+
+    var firstPageObserver: NSKeyValueObservation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLabelText(_:)), name: .lastPageText, object: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "SegueNextPage" {
+        firstPageObserver = observe(\.displayedText.secondPageText, options: [.new], changeHandler: {(object, change) in
             
+            guard let updatedValue = change.newValue else { return }
+            
+            self.label.text = updatedValue
+        })
+        
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueNextPage" {
+
             if let destination = segue.destination as? JillSecondViewController {
-                
-                NotificationCenter.default.addObserver(destination, selector: #selector(destination.updateLabelText(_:)), name: .nextPageText, object: nil)
+
+                destination.loadViewIfNeeded()
+
+                destination.displayedText.firstPageText = self.textField.text!
             }
         }
     }
 
-    @objc func updateLabelText(_ notification: Notification) {
-
-        if let dict = notification.userInfo {
-
-            label.text = dict["lastPageText"] as? String
-        }
-    }
-
 }
-
-// --------------- Push: NotificationCenter END ---------------
-
-
-// --------------- Push: KVO START ---------------
-
-//class DisplayedText: NSObject {
-//
-//    @objc dynamic var firstPageText = String()
-//    @objc dynamic var secondPageText = String()
-//}
-//
-//class JillFirstViewController: UIViewController {
-//
-//    @IBOutlet weak var textField: UITextField!
-//
-//    @IBOutlet weak var label: UILabel!
-//
-//    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
-//
-//        displayedText.firstPageText = textField.text!
-//
-//        performSegue(withIdentifier: "SegueNextPage", sender: nil)
-//    }
-//
-//    @objc let displayedText = DisplayedText()
-//
-//    var secondPageObserver: NSKeyValueObservation?
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        secondPageObserver = displayedText.observe(\.secondPageText, options: [.new], changeHandler: { (strongSelf, change) in
-//
-//            guard let updatedText = change.newValue else { return }
-//
-//            self.label.text = updatedText
-//
-//        })
-//    }
-//
-//}
