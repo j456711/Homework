@@ -13,7 +13,7 @@
         <!--Jill First View Controller-->
         <scene sceneID="xix-Pw-AuI">
             <objects>
-                <viewController id="GD7-jO-H1n" customClass="JillFirstViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JillFirstViewController" id="GD7-jO-H1n" customClass="JillFirstViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6A-hQ-lww">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,6 +27,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWZ-5e-NY0">
                                 <rect key="frame" x="164.5" y="412" width="46" height="30"/>
                                 <state key="normal" title="下一頁"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="GD7-jO-H1n" eventType="touchUpInside" id="PPM-SF-rx2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一頁的文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-55-Lpd">
                                 <rect key="frame" x="135.5" y="323" width="104" height="21"/>
@@ -50,6 +53,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="egs-2N-7xP"/>
                     <connections>
+                        <outlet property="label" destination="53A-55-Lpd" id="eIb-IM-uKx"/>
+                        <outlet property="textField" destination="huC-v9-XMb" id="Q3P-uy-ORb"/>
                         <segue destination="vsy-hk-lOT" kind="show" identifier="SegueNextPage" id="rAj-UY-pg1"/>
                     </connections>
                 </viewController>
@@ -60,7 +65,7 @@
         <!--Jill Second View Controller-->
         <scene sceneID="kDM-ko-d9N">
             <objects>
-                <viewController id="vsy-hk-lOT" customClass="JillSecondViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JillSecondViewController" id="vsy-hk-lOT" customClass="JillSecondViewController" customModule="Homework" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YTt-3O-4pN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,6 +85,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-mv-O1f">
                                 <rect key="frame" x="164.5" y="412" width="46" height="30"/>
                                 <state key="normal" title="上一頁"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="vsy-hk-lOT" eventType="touchUpInside" id="tTS-Pc-RCB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,6 +103,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JdQ-nK-uHr"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="o53-CG-M7u" id="DiO-bI-KUl"/>
+                        <outlet property="textField" destination="7uG-dR-iH9" id="H8v-4l-6RK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-dr-7XK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,7 +115,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9Fg-Hw-nCR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uym-Gd-kUS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="uym-Gd-kUS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pI0-HT-FoH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
