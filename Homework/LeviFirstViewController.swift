@@ -45,6 +45,18 @@ class LeviFirstViewController: UIViewController {
         //3 NotifiationCenter
         NotificationCenter.default.addObserver(self, selector: #selector(getTitle(notifciation:)), name: NotificationStruct.first, object: nil)
         
+        
+       // self.titleLevi = "AA"
+//        print(NSString(format: "%p", address(o: &self.titleLevi)))
+//        print(Unmanaged.passUnretained(self).toOpaque())
+//        print(Unmanaged.passUnretained(self.button).toOpaque())
+//
+//        withUnsafeBytes(of: &(self.titleLevi), { (point) -> Void in
+//            print(point)
+//        })
+//        print(NSString(format: "%p", addressHeap(o: self)))
+//        print("stop")
+        
     }
     
     
@@ -81,6 +93,7 @@ class LeviFirstViewController: UIViewController {
             vc.delgate = self
             
             
+            
             //5 closure
             vc.testClosure = {[weak self] text in
                 self?.titleLevi = text }
@@ -103,6 +116,14 @@ class LeviFirstViewController: UIViewController {
     }
     
     
+    func address(o: UnsafeRawPointer) -> Int {
+        return Int(bitPattern: o)
+    }
+    
+    func addressHeap<T: AnyObject>(o: T) -> Int {
+        return unsafeBitCast(o, to: Int.self)
+    }
+
     @objc func getTitle(notifciation: NSNotification) {
 //        guard let title = notifciation.userInfo?[AnyHashable("Levi")] as? String else {return}
 //        titleLevi = title
