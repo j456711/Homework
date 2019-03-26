@@ -6,6 +6,7 @@
 //  Copyright © 2019 Jill Yeh. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 // --------------- Push: Property START ---------------
@@ -82,23 +83,53 @@ import UIKit
 
 // --------------- Push: Closure START ---------------
 
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//
+//        dataHandler?()
+//
+//        self.navigationController?.popViewController(animated: true)
+//    }
+//
+//    var firstPageText: String?
+//
+//    var dataHandler: (() -> Void)?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//
+//        label.text = firstPageText
+//    }
+//
+//}
+
+// --------------- Push: Closure END ---------------
+
+
+// --------------- Push: NotificationCenter START ---------------
+
 class JillSecondViewController: UIViewController {
-    
+
     @IBOutlet weak var textField: UITextField!
-    
+
     @IBOutlet weak var label: UILabel!
-    
+
     @IBAction func lastPageButtonPressed(_ sender: UIButton) {
-        
-        dataHandler?()
-        
+
+        NotificationCenter.default.post(name: .lastPageText, object: nil, userInfo: ["lastPageText" : textField.text!])
+
         self.navigationController?.popViewController(animated: true)
     }
 
-    var firstPageText: String?
-    
-    var dataHandler: (() -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,6 +140,51 @@ class JillSecondViewController: UIViewController {
         label.text = firstPageText
     }
     
+    var firstPageText: String?
+    
+    @objc func updateLabelText(_ notification: Notification) {
+        
+        if let dict = notification.userInfo {
+            
+            firstPageText = dict["nextPageText"] as? String
+        }
+    }
+
 }
 
-// --------------- Push: Closure END ---------------
+// --------------- Push: NotificationCenter END ---------------
+
+
+// --------------- Push: KVO START ---------------
+
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//        
+//        displayedText.firstPageText = textField.text!
+//        
+//        self.navigationController?.popViewController(animated: true)
+//    }
+//
+//    @objc let displayedText = DisplayedText()
+//
+//    var firstPageObserver: NSKeyValueObservation?
+//
+//    var firstPageText: String?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        firstPageObserver = displayedText.observe(\.firstPageText, options: [.new], changeHandler: { (strongSelf, change) in
+//
+//            guard let updatedText = change.newValue else { return }
+//            
+//            self.label.text = updatedText
+//            
+//        })
+//    }
+//}
