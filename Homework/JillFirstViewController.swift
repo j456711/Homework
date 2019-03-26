@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jill Yeh. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // --------------- Push: Property START ---------------
@@ -17,7 +16,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        performSegue(withIdentifier: "SegueNextPage", sender: nil)
 //    }
@@ -38,7 +37,6 @@ import UIKit
 //        }
 //    }
 //
-//
 //}
 
 // --------------- Push: Property END ---------------
@@ -52,7 +50,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func nextPageButtonPressed(_ sender: Any) {
+//    @IBAction func buttonPressed(_ sender: Any) {
 //
 //        performSegue(withIdentifier: "SegueNextPage", sender: nil)
 //    }
@@ -95,7 +93,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        performSegue(withIdentifier: "SegueNextPage", sender: nil)
 //    }
@@ -139,7 +137,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        performSegue(withIdentifier: "SegueNextPage", sender: nil)
 //
@@ -178,50 +176,52 @@ import UIKit
 
 // --------------- Push: KVO START ---------------
 
-class DisplayedText: NSObject {
-    
-    @objc dynamic var firstPageText = ""
+//class DisplayedText: NSObject {
+//
+//    @objc dynamic var firstPageText = ""
+//
+//    @objc dynamic var secondPageText = ""
+//}
+//
+//class JillFirstViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func buttonPressed(_ sender: UIButton) {
+//
+//        performSegue(withIdentifier: "SegueNextPage", sender: nil)
+//    }
+//
+//    @objc let displayedText = DisplayedText()
+//
+//    var firstPageObserver: NSKeyValueObservation?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        firstPageObserver = observe(\.displayedText.secondPageText, options: [.new], changeHandler: {(object, change) in
+//
+//            guard let updatedValue = change.newValue else { return }
+//
+//            self.label.text = updatedValue
+//        })
+//
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "SegueNextPage" {
+//
+//            if let destination = segue.destination as? JillSecondViewController {
+//
+//                destination.loadViewIfNeeded()
+//
+//                destination.displayedText.firstPageText = self.textField.text!
+//            }
+//        }
+//    }
+//
+//}
 
-    @objc dynamic var secondPageText = ""
-}
-
-class JillFirstViewController: UIViewController {
-
-    @IBOutlet weak var textField: UITextField!
-
-    @IBOutlet weak var label: UILabel!
-
-    @IBAction func nextPageButtonPressed(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "SegueNextPage", sender: nil)
-    }
-    
-    @objc let displayedText = DisplayedText()
-
-    var firstPageObserver: NSKeyValueObservation?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        firstPageObserver = observe(\.displayedText.secondPageText, options: [.new], changeHandler: {(object, change) in
-            
-            guard let updatedValue = change.newValue else { return }
-            
-            self.label.text = updatedValue
-        })
-        
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueNextPage" {
-
-            if let destination = segue.destination as? JillSecondViewController {
-
-                destination.loadViewIfNeeded()
-
-                destination.displayedText.firstPageText = self.textField.text!
-            }
-        }
-    }
-
-}
+// --------------- Push: KVO END ---------------

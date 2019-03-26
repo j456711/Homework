@@ -28,7 +28,7 @@
                                 <rect key="frame" x="164.5" y="412" width="46" height="30"/>
                                 <state key="normal" title="下一頁"/>
                                 <connections>
-                                    <action selector="nextPageButtonPressed:" destination="GD7-jO-H1n" eventType="touchUpInside" id="46A-TZ-cAS"/>
+                                    <action selector="buttonPressed:" destination="GD7-jO-H1n" eventType="touchUpInside" id="46A-TZ-cAS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下一頁的文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53A-55-Lpd">
@@ -86,7 +86,7 @@
                                 <rect key="frame" x="164.5" y="412" width="46" height="30"/>
                                 <state key="normal" title="上一頁"/>
                                 <connections>
-                                    <action selector="lastPageButtonPressed:" destination="vsy-hk-lOT" eventType="touchUpInside" id="vwR-RR-NLh"/>
+                                    <action selector="buttonPressed:" destination="vsy-hk-lOT" eventType="touchUpInside" id="tTS-Pc-RCB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -105,7 +105,7 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="o53-CG-M7u" id="DiO-bI-KUl"/>
-                        <outlet property="textField" destination="7uG-dR-iH9" id="Lts-W6-gmh"/>
+                        <outlet property="textField" destination="7uG-dR-iH9" id="H8v-4l-6RK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-dr-7XK" userLabel="First Responder" sceneMemberID="firstResponder"/>

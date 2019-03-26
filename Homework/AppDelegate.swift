@@ -15,11 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let mainStoryboard = UIStoryboard(name: "JillStoryboard", bundle: nil)
-        if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController") as? UINavigationController {
-            
-            window?.rootViewController = viewController
-        }
+        
+//        let mainStoryboard = UIStoryboard(name: "JillStoryboard", bundle: nil)
+//        if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController") as? UINavigationController {
+//
+//            window?.rootViewController = viewController
+//        }
         
         return true
     }

@@ -6,7 +6,6 @@
 //  Copyright © 2019 Jill Yeh. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 // --------------- Push: Property START ---------------
@@ -17,7 +16,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        guard let firstVC = self.navigationController?.viewControllers.first as? JillFirstViewController else { return }
 //
@@ -52,11 +51,11 @@ import UIKit
 //
 //class JillSecondViewController: UIViewController {
 //
-//    @IBOutlet weak var textfield: UITextField!
+//    @IBOutlet weak var textField: UITextField!
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        self.delegate?.passData(self)
 //
@@ -89,7 +88,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        dataHandler?()
 //
@@ -123,7 +122,7 @@ import UIKit
 //
 //    @IBOutlet weak var label: UILabel!
 //
-//    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
+//    @IBAction func buttonPressed(_ sender: UIButton) {
 //
 //        NotificationCenter.default.post(name: .lastPageText, object: nil, userInfo: ["lastPageText" : textField.text!])
 //
@@ -157,34 +156,36 @@ import UIKit
 
 // --------------- Push: KVO START ---------------
 
-class JillSecondViewController: UIViewController {
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func buttonPressed(_ sender: UIButton) {
+//
+//        if let firstVC = self.navigationController?.viewControllers.first as? JillFirstViewController {
+//
+//            firstVC.displayedText.secondPageText = textField.text!
+//        }
+//
+//        self.navigationController?.popViewController(animated: true)
+//    }
+//
+//    @objc let displayedText = DisplayedText()
+//
+//    var secondPageObserver: NSKeyValueObservation?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        secondPageObserver = observe(\.displayedText.firstPageText, options: [.new], changeHandler: { (object, change) in
+//
+//            guard let updatedValue = change.newValue else { return }
+//
+//            self.label.text = updatedValue
+//        })
+//    }
+//}
 
-    @IBOutlet weak var textField: UITextField!
-
-    @IBOutlet weak var label: UILabel!
-
-    @IBAction func lastPageButtonPressed(_ sender: UIButton) {
-
-        if let firstVC = self.navigationController?.viewControllers.first as? JillFirstViewController {
-            
-            firstVC.displayedText.secondPageText = textField.text!
-        }
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc let displayedText = DisplayedText()
-    
-    var secondPageObserver: NSKeyValueObservation?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        secondPageObserver = observe(\.displayedText.firstPageText, options: [.new], changeHandler: { (object, change) in
-
-            guard let updatedValue = change.newValue else { return }
-          
-            self.label.text = updatedValue
-        })
-    }
-}
+// --------------- Push: KVO END ---------------
