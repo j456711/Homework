@@ -19,11 +19,25 @@ class LeviSecondViewController: UIViewController {
     weak var delgate: DelgateSend?
     var testClosure: ((String) -> Void)?
     var sendClosure: (()-> String)?
-    
+   
     @IBAction func action() {
-//        titleKVOLevi = textField.text
-//
         
+        
+        guard let title = textField.text else {return}
+        
+        //1
+        
+//        guard let navgiationVC = self.presentingViewController as? UINavigationController else {return}
+//        guard let vc = navgiationVC.topViewController as? LeviFirstViewController else {return}
+       // vc.titleLevi = title
+        
+        //2 Delgate
+        //self.delgate?.sendData(title: title)
+        
+        //3 Closure
+        testClosure?(title)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -40,18 +54,18 @@ class LeviSecondViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.dismiss.rawValue {
             
-            titleKVOLevi = textField.text
             
             guard let vc = segue.destination as? LeviFirstViewController else {return}
             guard let title = textField.text else {return}
             
             /////1
-          //  vc.titleLabel.text = title
+          //  vc.titleLevi = title
             
             ////2 KVO
-//            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
+    //        self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
 //            self.titleKVOLevi = title
 //            vc.removeObserver(self, forKeyPath: "titleKVOLevi")
+          
             
             ///3 NotifiationCenter
             //NotificationCenter.default.post(name: NotificationStruct.first, object: title)
@@ -60,7 +74,7 @@ class LeviSecondViewController: UIViewController {
            // self.delgate?.sendData(title: title)
             
             //5 Closure
-            testClosure?(title)
+           // testClosure?(title)
             
         }
     }
