@@ -193,20 +193,26 @@ import UIKit
 
 // --------------- Present: Property START ---------------
 
-//class JillSecondViewController: UIViewController {
-//    
-//    @IBOutlet weak var textField: UITextField!
-//    
-//    @IBOutlet weak var label: UILabel!
-//    
-//    @IBAction func buttonPressed(_ sender: UIButton) {
-//        
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//    
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//    }
-//}
+class JillSecondViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+
+    @IBOutlet weak var label: UILabel!
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+
+        guard let firstVC = self.presentingViewController as? JillFirstViewController else { return }
+        
+        firstVC.label.text = textField.text!
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    var firstPageText: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        label.text = firstPageText
+    }
+}

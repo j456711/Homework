@@ -229,21 +229,25 @@ import UIKit
 
 // --------------- Present: Property START ---------------
 
-//class JillFirstViewController: UIViewController {
-//    
-//    @IBOutlet weak var textField: UITextField!
-//    
-//    @IBOutlet weak var label: UILabel!
-//    
-//    @IBAction func buttonPressed(_ sender: UIButton) {
-//        
-//        guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
-//        
-//        self.present(secondVC, animated: true, completion: nil)
-//    }
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//    }
-//}
+class JillFirstViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+
+    @IBOutlet weak var label: UILabel!
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+
+        guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
+
+        secondVC.firstPageText = textField.text!
+        
+        self.present(secondVC, animated: true, completion: nil)
+    }
+    
+    var secondPageText: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+}
