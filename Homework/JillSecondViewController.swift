@@ -193,32 +193,68 @@ import UIKit
 
 // --------------- Present: Property START ---------------
 
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func buttonPressed(_ sender: UIButton) {
+//
+//        guard let firstVC = self.presentingViewController as? JillFirstViewController else { return }
+//
+//        firstVC.label.text = textField.text!
+//
+//
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//    var firstPageText: String?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        label.text = firstPageText
+//    }
+//}
+
+// --------------- Present: Property END ---------------
+
+
+// --------------- Present: Delegate START ---------------
+
+protocol SecondVCDelegate: AnyObject {
+    
+    func passDataToFirstVC(text: String)
+}
+
 class JillSecondViewController: UIViewController {
-
+    
     @IBOutlet weak var textField: UITextField!
-
+    
     @IBOutlet weak var label: UILabel!
-
+    
     @IBAction func buttonPressed(_ sender: UIButton) {
-
-        if let firstVC = self.presentingViewController as? JillFirstViewController {
-            
-            firstVC.label.text = textField.text!
-        }
+        
+        self.delegate?.passDataToFirstVC(text: textField.text!)
         
         self.dismiss(animated: true, completion: nil)
     }
 
+    weak var delegate: SecondVCDelegate?
+    
     var firstPageText: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         label.text = firstPageText
     }
+    
 }
 
-// --------------- Present: Property END ---------------
+// --------------- Present: Delegate END ---------------
+
 
 
 // --------------- Retain Cycle START ---------------
