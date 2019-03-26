@@ -257,6 +257,44 @@ import UIKit
 
 // --------------- Present: Delegate START ---------------
 
+//class JillFirstViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func buttonPressed(_ sender: UIButton) {
+//
+//        guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
+//
+//        secondVC.delegate = self
+//
+//        secondVC.firstPageText = textField.text!
+//
+//        self.present(secondVC, animated: true, completion: nil)
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    }
+//
+//}
+//
+//extension JillFirstViewController: SecondVCDelegate {
+//
+//    func passDataToFirstVC(text: String) {
+//
+//        label.text = text
+//    }
+//
+//}
+
+// --------------- Present: Delegate END ---------------
+
+
+// --------------- Present: Closure START ---------------
+
 class JillFirstViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
@@ -266,31 +304,24 @@ class JillFirstViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
-                
-        secondVC.delegate = self
         
         secondVC.firstPageText = textField.text!
         
+        secondVC.dataHandler = { text in
+            
+            self.label.text = text
+        }
+        
         self.present(secondVC, animated: true, completion: nil)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
 }
 
-extension JillFirstViewController: SecondVCDelegate {
-    
-    func passDataToFirstVC(text: String) {
-        
-        label.text = text
-    }
-    
-}
-
-// --------------- Present: Delegate END ---------------
+// --------------- Present: Closure END ---------------
 
 
 // --------------- Retain Cycle START ---------------

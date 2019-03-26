@@ -223,10 +223,40 @@ import UIKit
 
 // --------------- Present: Delegate START ---------------
 
-protocol SecondVCDelegate: AnyObject {
-    
-    func passDataToFirstVC(text: String)
-}
+//protocol SecondVCDelegate: AnyObject {
+//
+//    func passDataToFirstVC(text: String)
+//}
+//
+//class JillSecondViewController: UIViewController {
+//
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func buttonPressed(_ sender: UIButton) {
+//
+//        self.delegate?.passDataToFirstVC(text: textField.text!)
+//
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//    weak var delegate: SecondVCDelegate?
+//
+//    var firstPageText: String?
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        label.text = firstPageText
+//    }
+//
+//}
+
+// --------------- Present: Delegate END ---------------
+
+
+// --------------- Present: Closure START ---------------
 
 class JillSecondViewController: UIViewController {
     
@@ -235,13 +265,13 @@ class JillSecondViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        self.delegate?.passDataToFirstVC(text: textField.text!)
+    
+        dataHandler?(textField.text!)
         
         self.dismiss(animated: true, completion: nil)
     }
-
-    weak var delegate: SecondVCDelegate?
+    
+    var dataHandler: ((_ text: String) -> Void)?
     
     var firstPageText: String?
     
@@ -250,11 +280,9 @@ class JillSecondViewController: UIViewController {
         
         label.text = firstPageText
     }
-    
 }
 
-// --------------- Present: Delegate END ---------------
-
+// --------------- Present: Closure END ---------------
 
 
 // --------------- Retain Cycle START ---------------
