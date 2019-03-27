@@ -18,10 +18,9 @@
 		596ED9192248A069005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
 		596ED91B2248A082005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
 		596ED91D2248A0F4005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
-		CE077D1D2248A9540092AC14 /* MilesSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE077D1C2248A9540092AC14 /* MilesSecondViewController.swift */; };
 		596ED9202248B378005717E2 /* LeviSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */; };
 		596ED9212248B378005717E2 /* LeviFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ED91A2248A082005717E2 /* LeviFirstViewController.swift */; };
-		596ED9222248B378005717E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F122489D7C0077426A /* ViewController.swift */; };
+		596ED9222248B378005717E2 /* MilesFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F122489D7C0077426A /* MilesFirstViewController.swift */; };
 		596ED9232248B378005717E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC8EF22489D7C0077426A /* AppDelegate.swift */; };
 		596ED9242248B378005717E2 /* JillFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90122489EFB0077426A /* JillFirstViewController.swift */; };
 		596ED9252248B378005717E2 /* JillSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CC90322489F250077426A /* JillSecondViewController.swift */; };
@@ -30,6 +29,8 @@
 		596ED92A2248B378005717E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F622489D7E0077426A /* Assets.xcassets */; };
 		596ED92B2248B378005717E2 /* Levi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ED9182248A069005717E2 /* Levi.storyboard */; };
 		596ED92C2248B378005717E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CC8F322489D7C0077426A /* Main.storyboard */; };
+		5999722C224A2061006D1504 /* MilesSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE077D1C2248A9540092AC14 /* MilesSecondViewController.swift */; };
+		CE077D1D2248A9540092AC14 /* MilesSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE077D1C2248A9540092AC14 /* MilesSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +47,9 @@
 		596ED9182248A069005717E2 /* Levi.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Levi.storyboard; sourceTree = "<group>"; };
 		596ED91A2248A082005717E2 /* LeviFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviFirstViewController.swift; sourceTree = "<group>"; };
 		596ED91C2248A0F4005717E2 /* LeviSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeviSecondViewController.swift; sourceTree = "<group>"; };
-		CE077D1C2248A9540092AC14 /* MilesSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilesSecondViewController.swift; sourceTree = "<group>"; };
 		596ED9302248B378005717E2 /* Homework copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Homework copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		596ED9312248B378005717E2 /* Homework copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Homework copy-Info.plist"; path = "/Users/chiangchihhsuan/Desktop/March25/Homework copy-Info.plist"; sourceTree = "<absolute>"; };
+		CE077D1C2248A9540092AC14 /* MilesSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilesSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,9 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5999722C224A2061006D1504 /* MilesSecondViewController.swift in Sources */,
 				596ED9202248B378005717E2 /* LeviSecondViewController.swift in Sources */,
 				596ED9212248B378005717E2 /* LeviFirstViewController.swift in Sources */,
-				596ED9222248B378005717E2 /* ViewController.swift in Sources */,
+				596ED9222248B378005717E2 /* MilesFirstViewController.swift in Sources */,
 				596ED9232248B378005717E2 /* AppDelegate.swift in Sources */,
 				596ED9242248B378005717E2 /* JillFirstViewController.swift in Sources */,
 				596ED9252248B378005717E2 /* JillSecondViewController.swift in Sources */,

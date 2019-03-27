@@ -28,6 +28,7 @@ class LeviFirstViewController: UIViewController {
     @objc dynamic var titleKVOLevi: String?
     var closure: (() -> Void)? = nil
     var observer: NSKeyValueObservation!
+    var secondViewController: LeviSecondViewController?
     
     @IBAction func action() {
         
@@ -101,21 +102,15 @@ class LeviFirstViewController: UIViewController {
             
             
             //2 KVO
-            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
-            observer = vc.observe(\.titleKVOLevi, options: [ .new], changeHandler: { [weak self](object, change) in
-                print(change)
-                print(object)
-                guard let title = change.newValue as? String else {return}
-                self?.titleLevi = title
-                
-            })
-            
-//            vc.observer = self.observe(\.titleKVOLevi, options: [.new]){ [weak self] (object, change) in
-//
-//                print(object)
+//            self.addObserver(vc, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
+//            observer = vc.observe(\.titleKVOLevi, options: [ .new], changeHandler: { [weak self](object, change) in
 //                print(change)
-//            }
-            titleKVOLevi = title
+//                print(object)
+//                guard let title = change.newValue as? String else {return}
+//                self?.titleLevi = title
+//
+//            })
+//            titleKVOLevi = title
             //vc.addObserver(self, forKeyPath: "titleKVOLevi", options: [.new], context: nil)
             
             
@@ -125,13 +120,15 @@ class LeviFirstViewController: UIViewController {
 //            NotificationCenter.default.post(name: NotificationStruct.second, object: title)
             
             //4 delgate
-            vc.delgate = self
+//            self.secondViewController = vc
+//            vc.delgate = self
             
             
             
             //5 closure
-//            vc.testClosure = {[weak self] text in
-//                self?.titleLevi = text }
+//            self.secondViewController = vc
+            vc.testClosure = { text in
+                self.titleLevi = text }
 //            vc.sendClosure = { [weak self] in
 //                return self?.textField.text ?? ""
 //            }
@@ -165,6 +162,10 @@ class LeviFirstViewController: UIViewController {
         guard let titleTwo = notifciation.object as? String else {return}
         titleLevi = titleTwo
       
+    }
+    
+    deinit {
+        print("FirstViewController Dead")
     }
 }
 

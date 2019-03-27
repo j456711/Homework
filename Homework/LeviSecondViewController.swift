@@ -16,10 +16,25 @@ class LeviSecondViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     var titleLevi: String?
     @objc dynamic var titleKVOLevi: String?
-    weak var delgate: DelgateSend?
+    var delgate: DelgateSend?
     var testClosure: ((String) -> Void)?
     var sendClosure: (()-> String)?
-   
+    var observer: NSKeyValueObservation!
+    
+    
+    @IBAction func changeRootView() {
+        
+        let mainStoryBoard = UIStoryboard(name: "Levi", bundle: nil)
+        let redViewController = mainStoryBoard.instantiateViewController(withIdentifier: "respectiveIdentifier")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = redViewController
+        
+        self.navigationController?.dismiss(animated: false, completion: nil)
+        
+    }
+    
+    
+    
     @IBAction func action() {
         
         
@@ -71,7 +86,7 @@ class LeviSecondViewController: UIViewController {
             //NotificationCenter.default.post(name: NotificationStruct.first, object: title)
             
             //4 Delgate
-           // self.delgate?.sendData(title: title)
+            self.delgate?.sendData(title: title)
             
             //5 Closure
            // testClosure?(title)
@@ -99,8 +114,11 @@ class LeviSecondViewController: UIViewController {
         
         self.testClosure = complethilder
     }
+    deinit {
+        print("SecondViewController Dead")
+    }
 }
 
-protocol DelgateSend: class {
+protocol DelgateSend {
     func sendData(title: String)
 }
