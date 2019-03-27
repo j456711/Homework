@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            window?.rootViewController = viewController
 //        }
         
-        let mainStoryboard = UIStoryboard(name: "JillStoryboard", bundle: nil)
-        if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "JillFirstViewController") as? JillFirstViewController {
-            
-            window?.rootViewController = viewController
-        }
+//        let mainStoryboard = UIStoryboard(name: "JillStoryboard", bundle: nil)
+//        if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "JillFirstViewController") as? JillFirstViewController {
+//
+//            window?.rootViewController = viewController
+//        }
         
         return true
     }

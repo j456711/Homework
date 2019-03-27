@@ -257,6 +257,53 @@ import UIKit
 
 // --------------- Present: Delegate START ---------------
 
+//protocol FirstVCDelegate: AnyObject {
+//
+//    func passDataToSecondVC(_ viewController: JillFirstViewController, text: String)
+//}
+
+class JillFirstViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+
+    @IBOutlet weak var label: UILabel!
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+
+        guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
+
+        secondVC.delegate = self
+
+//        self.delegate?.passDataToSecondVC(self, text: textField.text!)
+        
+        secondVC.firstPageText = textField.text!
+
+        self.present(secondVC, animated: true, completion: nil)
+    }
+
+//    weak var delegate: FirstVCDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+
+}
+
+extension JillFirstViewController: SecondVCDelegate {
+
+    func passDataToFirstVC(text: String) {
+
+        label.text = text
+    }
+
+}
+
+// --------------- Present: Delegate END ---------------
+
+
+// --------------- Present: Closure START ---------------
+
 //class JillFirstViewController: UIViewController {
 //
 //    @IBOutlet weak var textField: UITextField!
@@ -267,9 +314,12 @@ import UIKit
 //
 //        guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
 //
-//        secondVC.delegate = self
-//
 //        secondVC.firstPageText = textField.text!
+//
+//        secondVC.dataHandler = { text in
+//
+//            self.label.text = text
+//        }
 //
 //        self.present(secondVC, animated: true, completion: nil)
 //    }
@@ -278,64 +328,7 @@ import UIKit
 //        super.viewDidLoad()
 //
 //    }
-//
 //}
-//
-//extension JillFirstViewController: SecondVCDelegate {
-//
-//    func passDataToFirstVC(text: String) {
-//
-//        label.text = text
-//    }
-//
-//}
-
-// --------------- Present: Delegate END ---------------
-
-
-// --------------- Present: Closure START ---------------
-
-class JillFirstViewController: UIViewController {
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    @IBOutlet weak var label: UILabel!
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        
-        guard let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "JillSecondViewController") as? JillSecondViewController else { return }
-        
-        secondVC.firstPageText = textField.text!
-        
-        secondVC.dataHandler = { text in
-            
-            self.label.text = text
-        }
-        
-        self.present(secondVC, animated: true, completion: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-}
 
 // --------------- Present: Closure END ---------------
 
-
-// --------------- Retain Cycle START ---------------
-
-//class JillFirstViewController: UIViewController {
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-//
-//    deinit {
-//
-//        print("JillFirst is killed.")
-//    }
-//}

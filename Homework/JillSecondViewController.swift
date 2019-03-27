@@ -223,32 +223,41 @@ import UIKit
 
 // --------------- Present: Delegate START ---------------
 
-//protocol SecondVCDelegate: AnyObject {
+protocol SecondVCDelegate: AnyObject {
+
+    func passDataToFirstVC(text: String)
+}
+
+class JillSecondViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+
+    @IBOutlet weak var label: UILabel!
+
+    @IBAction func buttonPressed(_ sender: UIButton) {
+
+        self.delegate?.passDataToFirstVC(text: textField.text!)
+
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    weak var delegate: SecondVCDelegate?
+    
+    var firstPageText: String?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        label.text = firstPageText
+    }
+
+}
+
+//extension JillSecondViewController: FirstVCDelegate {
 //
-//    func passDataToFirstVC(text: String)
-//}
+//    func passDataToSecondVC(_ viewController: JillFirstViewController, text: String) {
 //
-//class JillSecondViewController: UIViewController {
-//
-//    @IBOutlet weak var textField: UITextField!
-//
-//    @IBOutlet weak var label: UILabel!
-//
-//    @IBAction func buttonPressed(_ sender: UIButton) {
-//
-//        self.delegate?.passDataToFirstVC(text: textField.text!)
-//
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//
-//    weak var delegate: SecondVCDelegate?
-//
-//    var firstPageText: String?
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        label.text = firstPageText
+//        label.text = text
 //    }
 //
 //}
@@ -258,45 +267,29 @@ import UIKit
 
 // --------------- Present: Closure START ---------------
 
-class JillSecondViewController: UIViewController {
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    @IBOutlet weak var label: UILabel!
-    
-    @IBAction func buttonPressed(_ sender: UIButton) {
-    
-        dataHandler?(textField.text!)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    var dataHandler: ((_ text: String) -> Void)?
-    
-    var firstPageText: String?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        label.text = firstPageText
-    }
-}
-
-// --------------- Present: Closure END ---------------
-
-
-// --------------- Retain Cycle START ---------------
-
 //class JillSecondViewController: UIViewController {
 //
+//    @IBOutlet weak var textField: UITextField!
+//
+//    @IBOutlet weak var label: UILabel!
+//
+//    @IBAction func buttonPressed(_ sender: UIButton) {
+//
+//        dataHandler?(textField.text!)
+//
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//
+//    var dataHandler: ((_ text: String) -> Void)?
+//
+//    var firstPageText: String?
 //
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //
-//    }
-//
-//    deinit {
-//
-//        print("JillSecond is killed.")
+//        label.text = firstPageText
 //    }
 //}
+
+// --------------- Present: Closure END ---------------
+
